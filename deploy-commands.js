@@ -3,7 +3,11 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { clientId, guildId, token } = require('./config.json');
+const dotenv = require('dotenv');
+dotenv.config();
+const clientId = process.env.CLIENTID;
+const guildId = process.env.GUILDID;
+const token = process.env.TOKEN;
 
 // obtiene los comandos de la carpeta commands y los va guardado en el array llamado commands para registrarlos
 const commands = [];
